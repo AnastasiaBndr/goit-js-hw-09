@@ -39,11 +39,10 @@ function onClick(evt){
    
     const fpDateTime = Date.parse(myInput.value);
     startBtn.disabled=true;
-    console.log("dksmca");
         const timerId = setInterval(()=>{
 
             const deltaTime = fpDateTime-new Date().getTime();
-
+          console.log(deltaTime);
             const timeComponents = convertMs(deltaTime);
             const daysStr = addLeadingZero(timeComponents.days);
             const hourStr=addLeadingZero(timeComponents.hours);
@@ -87,7 +86,8 @@ function convertMs(ms) {
 
   function addLeadingZero(value){
     if(value<10){
-      return value+"".padStart(2,'0');
+      const str = value+"";
+      return str.padStart(2,'0');
     }
   }
 
