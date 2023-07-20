@@ -18,6 +18,10 @@ img {
   max-width: 100%;
 }
 
+li{
+  list-style-type: none;
+}
+
 .timer{
   margin-top: 20px;
   display: flex;
