@@ -26,8 +26,9 @@ startBtn.addEventListener("click", onClick);
          if(currentDateTime>=fpDateTime){
             Notiflix.Report.failure('Date in the past', 'Choose date in future!', 'Ok', {
               width: '360px',
-              svgSize: '120px',
+              svgSize: '60px',
               borderRadius: '8px',
+              fontFamily: 'Tektur',
             },);
             startBtn.disabled=true;
     }else startBtn.disabled=false;
@@ -41,7 +42,15 @@ function onClick(evt){
     startBtn.disabled=true;
         const timerId = setInterval(()=>{
 
-            const deltaTime = fpDateTime-new Date().getTime();
+            const deltaTime = fpDateTime-new Date().getTime(); 
+            
+            if(deltaTime<1000){
+                document.querySelector("body").insertAdjacentHTML("beforeend",` <div>
+                <h2>The end! :)</h2>
+              </div>`);
+              clearInterval(timerId);
+            }
+
           console.log(deltaTime);
             const timeComponents = convertMs(deltaTime);
             const daysStr = addLeadingZero(timeComponents.days);
@@ -54,12 +63,7 @@ function onClick(evt){
             document.querySelector("[data-minutes]").textContent=minsStr;
             document.querySelector("[data-seconds]").textContent=secsStr;
             
-            if(deltaTime===0){
-                document.querySelector("body").insertAdjacentHTML("beforeend",` <div>
-                <h2>The end! :)</h2>
-              </div>`);
-              clearInterval(timerId);
-            }
+           
 
         }, 1000);
     }
@@ -85,10 +89,11 @@ function convertMs(ms) {
   }
 
   function addLeadingZero(value){
+    const str = value+"";
     if(value<10){
-      const str = value+"";
       return str.padStart(2,'0');
     }
+    else return str;
   }
 
 

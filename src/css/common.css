@@ -12,7 +12,82 @@ body {
   line-height: 1.5;
 }
 
+
 img {
   display: block;
   max-width: 100%;
 }
+
+.timer{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.field{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight:450;
+   margin-right: 10px;
+}
+
+.label{
+  font-size: 15px;
+  text-transform:uppercase;
+}
+.value{
+  font-size: 30px;
+}
+
+body{
+  width: 300px;
+  background-color: #212121;
+  color:aquamarine;
+}
+body,input,button{
+  font-family: 'Tektur';
+  background-color: #212121;
+  color:aquamarine;
+}
+button,input{
+  border: 2px solid aquamarine;
+  border-radius: 2px;
+}
+a{
+  color: #7fffd4;
+  text-decoration: none;
+}
+input:hover, button:hover{
+  background-color: aquamarine;
+  color: #212121;
+  cursor: pointer;
+}
+a::before{
+  content: "< ";
+}
+a:hover{
+  text-decoration: underline;
+}
+
+*:focus{
+  outline: none;
+}
+
+label{
+  display: flex;
+  flex-direction: column;
+}
+
+button:disabled,button[disabled]{
+  border: 2px solid rgb(133, 187, 169);
+  border-radius: 2px;
+  background-color: #6a6a6a;
+  color:rgb(133, 187, 169)
+}
+
+input[type=number] { 
+  -moz-appearance: textfield;
+  appearance: textfield;
+  margin: 0; 
+}
+
