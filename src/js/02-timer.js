@@ -16,6 +16,7 @@ const fp = flatpickr("#datetime-picker",options);
 const startBtn = document.querySelector("[data-start]");
 const myInput = document.querySelector("#datetime-picker");
 
+
 startBtn.addEventListener("click", onClick);
  
     myInput.addEventListener("input", onInput);
@@ -40,6 +41,7 @@ function onClick(evt){
    
     const fpDateTime = Date.parse(myInput.value);
     startBtn.disabled=true;
+    document.getElementById("datetime-picker").disabled=true;
         const timerId = setInterval(()=>{
 
             const deltaTime = fpDateTime-new Date().getTime(); 

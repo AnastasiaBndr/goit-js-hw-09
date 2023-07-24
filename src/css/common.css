@@ -82,12 +82,13 @@ label{
   flex-direction: column;
 }
 
-button:disabled,button[disabled]{
+button:disabled,button[disabled],input[disabled], input:disabled{
   border: 2px solid rgb(133, 187, 169);
   border-radius: 2px;
   background-color: #6a6a6a;
   color:rgb(133, 187, 169)
 }
+
 
 input[type=number] { 
   -moz-appearance: textfield;
