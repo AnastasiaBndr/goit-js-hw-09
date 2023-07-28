@@ -52,6 +52,7 @@ function onSubmit(evt){
       position: 'right-top',
       distance: '10px',
       opacity: 1,});
+      counter++;
   })
   .catch(({ position, delay }) => {
     Notiflix.Notify.failure(`Rejected promise ${position} in ${Number(delay)+Number(inputData.step)*counter}ms`,
@@ -61,8 +62,8 @@ function onSubmit(evt){
       distance: '10px',
       opacity: 1,
     });
-  });
     counter++;
+  });
   }, inputData.delay);
   
 };
